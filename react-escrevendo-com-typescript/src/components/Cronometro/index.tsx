@@ -6,22 +6,22 @@ import { useState } from "react";
 import { tempoParaSegundos } from "../../common/utils/time";
 
 interface Props {
-    selecionado: ITarefa | undefined
+  selecionado: ITarefa | undefined
 }
 
-export function Cronometro({selecionado} : Props) {
-    const [tempo, setTempo] = useState<Number>();
-    if (selecionado?.tempo) {
-        setTempo(tempoParaSegundos(selecionado?.tempo))
-    }
-    return (
-        <div className={style.cronometro}>
-            <p className={style.titulo}>Escolhe um card e inicie o cronômetro</p>
-            
-            <div className={style.relogioWrapper}>
-                <Relogio />
-            </div>
-            <Botao>Começar!</Botao>
-        </div>
-    )
+export function Cronometro({ selecionado }: Props) {
+  const [tempo, setTempo] = useState<Number>();
+  if (selecionado?.tempo) {
+    setTempo(tempoParaSegundos(selecionado?.tempo))
+  }
+  return (
+    <div className={style.cronometro}>
+      <p className={style.titulo}>Escolhe um card e inicie o cronômetro</p>
+
+      <div className={style.relogioWrapper}>
+        <Relogio />
+      </div>
+      <Botao>Começar!</Botao>
+    </div>
+  )
 }
